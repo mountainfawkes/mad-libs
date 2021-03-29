@@ -3,6 +3,7 @@ $(document).ready(function() {
     event.preventDefault();
     
     let things = [];
+    let spans = [".person1",".person2",".animal",".exclamation",".verb",".noun"]
     
     things.push($("input#person1").val());
     things.push($("input#person2").val());
@@ -11,13 +12,12 @@ $(document).ready(function() {
     things.push($("input#verb").val());
     things.push($("input#noun").val());
 
-    console.log(things);
-
-    // $(".person1").text(person1Input);
-
+    let index = 0;
+    things.forEach(function(element) {
+      $(spans[index]).text(element);
+      index += 1;
+    });
 
     $("#story").show();
-
-    event.preventDefault();
   });
 });
